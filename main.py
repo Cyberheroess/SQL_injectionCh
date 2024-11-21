@@ -16,8 +16,8 @@ B = '\033[94m'  # Blue
 M = '\033[95m'  # Magenta
 C = '\033[96m'  # Cyan
 N = '\033[0m'   # Reset
-
 def banner():
+    print("Printing banner...")  # Debugging message
     print(f"{R}                                                                                   {N}")
     print(f"{R} ,-----.         {Y},--.                 {G},--.                                         {N}")
     print(f"{Y}'  .--./,{G}--. ,{Y}--.|  |-.  ,---. ,{R}--.--.|  ,---.  ,---. ,{R}--.--. ,{R}---.  ,---.  ,---.  {N}")
@@ -25,8 +25,7 @@ def banner():
     print(f"{C}'  '--'\\  \\   '  | `-' |\\   --.|  |   |  | |  |\\   --.|  |   ' '-' '\\   --..-'  `) {N}")
     print(f"{M} `-----'.-'  /    `---'  `----'`--'   `--' `--' `----'`--'    `---'  `----'`----'  {N}")
     print(f"{Y}        `---'                                                                       {N}")
-
-banner()
+    print("Banner printed.")  # Debugging message
 
 
 def check_https(url):
@@ -165,4 +164,5 @@ def api_bot():
     return jsonify({"respons": response})
 
 if __name__ == '__main__':
+    banner()
     app.run(debug=True)
