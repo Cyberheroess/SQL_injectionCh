@@ -35,6 +35,7 @@ python main.py
 ```
 ## Mengakses dan Menguji API
 Aplikasi ini menyediakan beberapa endpoint API yang dapat diuji. Berikut adalah cara untuk mengaksesnya menggunakan curl.
+![17321843697478603290982484006949](https://github.com/user-attachments/assets/11bdcfe3-0b80-4f6f-af14-07d313c09742)
 
 ## Menguji Website
 Untuk menguji keamanan sebuah website (HTTPS, header keamanan, dan form input), kirim permintaan POST ke endpoint /test_website:
