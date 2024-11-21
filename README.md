@@ -1,19 +1,9 @@
 ![17321472629448090425316459222952](https://github.com/user-attachments/assets/800db8e1-b67b-4520-ab64-a6e8d173b89c)
 
 # SQL_injection v2
-## Fitur Utama
-- **Pengujian SQL Injection**: Menguji apakah sebuah situs web rentan terhadap SQL Injection.
-- **Pengujian HTTPS**: Memastikan situs web menggunakan HTTPS untuk enkripsi yang lebih aman.
-- **Pemeriksaan Header Keamanan**: Memverifikasi apakah situs web memiliki header keamanan yang sesuai.
-- **Deteksi Formulir Input**: Memeriksa apakah situs web memiliki formulir input yang bisa jadi rentan terhadap serangan.
-- **Bot Pengujian Keamanan**: Bot yang dapat menjawab pertanyaan terkait pengujian keamanan dan memberikan petunjuk.
-
 ## Prasyarat
-Pastikan kamu memiliki Python 3.x yang terinstal. kamu dapat memeriksanya dengan menjalankan:
+Python 3.x
 
-```bash
-python --version
-```
 ## Instalasi pustaka 
 menginstal beberapa pustaka eksternal.
 ```bash
@@ -54,6 +44,13 @@ Bot dapat memberikan bantuan atau instruksi terkait pengujian keamanan. Kirim pe
 
 ```bash
 curl -X POST http://127.0.0.1:5000/bot -H "Content-Type: application/json" -d '{"message": "halo"}'
+```
+## fitur xss 
+perintah ini untuk mengakses fitur pengujian XSS
+```bash
+curl -X POST http://127.0.0.1:5000/test_xss \
+-H "Content-Type: application/json" \
+-d '{"url": "http://(url web)"}'
 ```
 
 ![17321842346464553736190312485031](https://github.com/user-attachments/assets/67406010-4a8e-4362-92e9-167960c60aed)
