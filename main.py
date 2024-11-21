@@ -9,6 +9,24 @@ import socket
 from bs4 import BeautifulSoup
 
 app = flask.Flask(__name__)
+R = '\033[91m'  # Red
+G = '\033[92m'  # Green
+Y = '\033[93m'  # Yellow
+B = '\033[94m'  # Blue
+M = '\033[95m'  # Magenta
+C = '\033[96m'  # Cyan
+N = '\033[0m'   # Reset
+
+def banner():
+    print(f"{R}                                                                                   {N}")
+    print(f"{R} ,-----.         {Y},--.                 {G},--.                                         {N}")
+    print(f"{Y}'  .--./,{G}--. ,{Y}--.|  |-.  ,---. ,{R}--.--.|  ,---.  ,---. ,{R}--.--. ,{R}---.  ,---.  ,---.  {N}")
+    print(f"{G}|  |     {C}\\  '  / {M}| .-. '{G}| .-. :{M}|  .--'{Y}|  .-.  {C}|| .-. :|  .--'{M}| .-. {C}|| .-. :{M}(  .-'  {N}")
+    print(f"{C}'  '--'\\  \\   '  | `-' |\\   --.|  |   |  | |  |\\   --.|  |   ' '-' '\\   --..-'  `) {N}")
+    print(f"{M} `-----'.-'  /    `---'  `----'`--'   `--' `--' `----'`--'    `---'  `----'`----'  {N}")
+    print(f"{Y}        `---'                                                                       {N}")
+
+banner()
 
 
 def check_https(url):
