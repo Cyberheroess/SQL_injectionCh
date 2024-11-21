@@ -55,4 +55,5 @@ Bot dapat memberikan bantuan atau instruksi terkait pengujian keamanan. Kirim pe
 curl -X POST http://127.0.0.1:5000/bot -H "Content-Type: application/json" -d '{"message": "halo"}'
 ```
 
+![17321842346464553736190312485031](https://github.com/user-attachments/assets/67406010-4a8e-4362-92e9-167960c60aed)
 
