@@ -32,25 +32,25 @@ Aplikasi ini menyediakan beberapa endpoint API yang dapat diuji. Berikut adalah 
 ![17321843697478603290982484006949](https://github.com/user-attachments/assets/11bdcfe3-0b80-4f6f-af14-07d313c09742)
 
 ## Menguji Website
-Untuk menguji keamanan sebuah website (HTTPS, header keamanan, dan form input), kirim permintaan POST ke endpoint /test_website:
+> Untuk menguji keamanan sebuah website (HTTPS, header keamanan, dan form input), kirim permintaan POST ke endpoint /test_website:
 
 ```bash
 curl -X POST http://127.0.0.1:5000/test_website -H "Content-Type: application/json" -d '{"url": "http://example.com"}'
 ```
 ### Menguji SQL Injection
-Untuk menguji kerentanannya terhadap SQL Injection, kirim permintaan POST ke endpoint /test_sql_injection:
+> Untuk menguji kerentanannya terhadap SQL Injection, kirim permintaan POST ke endpoint /test_sql_injection:
 
 ```bash
 curl -X POST http://127.0.0.1:5000/test_sql_injection -H "Content-Type: application/json" -d '{"url": "http://(url web)"}'
 ```
 ### Berinteraksi dengan Bot
-Bot dapat memberikan bantuan atau instruksi terkait pengujian keamanan. Kirim pesan ke endpoint /bot menggunakan permintaan POST:
+> Bot dapat memberikan bantuan atau instruksi terkait pengujian keamanan. Kirim pesan ke endpoint /bot menggunakan permintaan POST:
 
 ```bash
 curl -X POST http://127.0.0.1:5000/bot -H "Content-Type: application/json" -d '{"message": "halo"}'
 ```
 ## fitur xss 
-perintah ini untuk mengakses fitur pengujian XSS
+> perintah ini untuk mengakses fitur pengujian XSS
 ```bash
 curl -X POST http://127.0.0.1:5000/test_xss \
 -H "Content-Type: application/json" \
