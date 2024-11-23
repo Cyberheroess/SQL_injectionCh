@@ -22,6 +22,8 @@ python main.py
 ## jika memgalami error 
 lakukan instalasi seperti berikut
 ```bash
+pkg update && pkg upgrade -y
+pkg install libexpat
 pip install -r requirements.txt
 git clone https://github.com/Cyberheroess/SQL_injectionCh.git
 cd SQL_injectionCh
