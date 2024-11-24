@@ -25,9 +25,9 @@ lakukan instalasi seperti berikut
 pkg update && pkg upgrade -y
 pkg install libexpat
 pip install --upgrade flask werkzeug
-pip install -r requirements.txt
 git clone https://github.com/Cyberheroess/SQL_injectionCh.git
 cd SQL_injectionCh
+pip install -r requirements.txt
 python main.py
 ```
 ## Mengakses dan Menguji API
@@ -55,9 +55,7 @@ curl -X POST http://127.0.0.1:5000/bot -H "Content-Type: application/json" -d '{
 ## fitur xss 
 > perintah ini untuk mengakses fitur pengujian XSS
 ```bash
-curl -X POST http://127.0.0.1:5000/test_xss \
--H "Content-Type: application/json" \
--d '{"url": "http://(url web)"}'
+curl -X POST http://127.0.0.1:5000/test_xss -H "Content-Type: application/json" -d '{"url": "http://(url web)"}'
 ```
 
 ![17321842346464553736190312485031](https://github.com/user-attachments/assets/67406010-4a8e-4362-92e9-167960c60aed)
