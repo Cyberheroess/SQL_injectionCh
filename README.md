@@ -1,6 +1,6 @@
 ![17321472629448090425316459222952](https://github.com/user-attachments/assets/800db8e1-b67b-4520-ab64-a6e8d173b89c)
 
-# SQL_injection v2
+# SQL_injection v2.
 <p align="center">
   <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
 <img src="https://img.shields.io/github/repo-size/payloadbox/sql-injection-payload-list"> <img src="https://img.shields.io/github/license/payloadbox/sql-injection-payload-list"> 
